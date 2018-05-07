@@ -9,6 +9,7 @@
     <com.mapbox.mapboxsdk.maps.MapView
         android:id="@+id/mapview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        app:mapbox_styleUrl="https://outdoor.mapwize.io/styles/mapwize/style.json?key=YOU_MAPWIZE_API_KEY"/>
 
 </android.support.constraint.ConstraintLayout>
