@@ -1,15 +1,17 @@
 package io.mapwize.mapwizesimpleapplication;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 
-import io.mapwize.mapwizeformapbox.MapOptions;
-import io.mapwize.mapwizeformapbox.MapwizePlugin;
+import io.mapwize.mapwizeformapbox.map.MapOptions;
+import io.mapwize.mapwizeformapbox.map.MapwizePlugin;
+import io.mapwize.mapwizeformapbox.map.MapwizePluginFactory;
+
 
 public class MapActivity extends AppCompatActivity {
 
@@ -28,7 +30,7 @@ public class MapActivity extends AppCompatActivity {
         MapOptions options = new MapOptions.Builder()
                 .build();
 
-        mapwizePlugin = new MapwizePlugin(mapView, options);
+        mapwizePlugin = MapwizePluginFactory.create(mapView, options);
         mapwizePlugin.setOnDidLoadListener(new MapwizePlugin.OnDidLoadListener() {
             @Override
             public void didLoad(MapwizePlugin mapwizePlugin) {
